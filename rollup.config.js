@@ -10,29 +10,29 @@ let entries = [];
 let core = {};
 
 let coreDependencies = {
-    'primevueBeak/utils': 'primevueBeak.utils',
-    'primevueBeak/api': 'primevueBeak.api',
-    'primevueBeak/config': 'primevueBeak.config',
-    'primevueBeak/ripple': 'primevueBeak.ripple',
-    'primevueBeak/tooltip': 'primevueBeak.tooltip',
-    'primevueBeak/virtualscroller': 'primevueBeak.virtualscroller',
-    'primevueBeak/confirmationeventbus': 'primevueBeak.confirmationeventbus',
-    'primevueBeak/toasteventbus': 'primevueBeak.toasteventbus',
-    'primevueBeak/overlayeventbus': 'primevueBeak.overlayeventbus',
-    'primevueBeak/terminalservice': 'primevueBeak.terminalservice',
-    'primevueBeak/useconfirm': 'primevueBeak.useconfirm',
-    'primevueBeak/usetoast': 'primevueBeak.usetoast',
-    'primevueBeak/button': 'primevueBeak.button',
-    'primevueBeak/inputtext': 'primevueBeak.inputtext',
-    'primevueBeak/inputnumber': 'primevueBeak.inputnumber',
-    'primevueBeak/message': 'primevueBeak.message',
-    'primevueBeak/progressbar': 'primevueBeak.progressbar',
-    'primevueBeak/dropdown': 'primevueBeak.dropdown',
-    'primevueBeak/dialog': 'primevueBeak.dialog',
-    'primevueBeak/paginator': 'primevueBeak.paginator',
-    'primevueBeak/tree': 'primevueBeak.tree',
-    'primevueBeak/menu': 'primevueBeak.menu',
-    'primevueBeak/tieredmenu': 'primevueBeak.tieredmenu'
+    'primevue/utils': 'primevue.utils',
+    'primevue/api': 'primevue.api',
+    'primevue/config': 'primevue.config',
+    'primevue/ripple': 'primevue.ripple',
+    'primevue/tooltip': 'primevue.tooltip',
+    'primevue/virtualscroller': 'primevue.virtualscroller',
+    'primevue/confirmationeventbus': 'primevue.confirmationeventbus',
+    'primevue/toasteventbus': 'primevue.toasteventbus',
+    'primevue/overlayeventbus': 'primevue.overlayeventbus',
+    'primevue/terminalservice': 'primevue.terminalservice',
+    'primevue/useconfirm': 'primevue.useconfirm',
+    'primevue/usetoast': 'primevue.usetoast',
+    'primevue/button': 'primevue.button',
+    'primevue/inputtext': 'primevue.inputtext',
+    'primevue/inputnumber': 'primevue.inputnumber',
+    'primevue/message': 'primevue.message',
+    'primevue/progressbar': 'primevue.progressbar',
+    'primevue/dropdown': 'primevue.dropdown',
+    'primevue/dialog': 'primevue.dialog',
+    'primevue/paginator': 'primevue.paginator',
+    'primevue/tree': 'primevue.tree',
+    'primevue/menu': 'primevue.menu',
+    'primevue/tieredmenu': 'primevue.tieredmenu'
 }
 
 let globalDependencies = {
@@ -42,7 +42,7 @@ let globalDependencies = {
 }
 
 function addEntry(folder, inFile, outFile) {
-    let useCorePlugin = Object.keys(coreDependencies).some(d => d.replace('primevueBeak/', '') === outFile);
+    let useCorePlugin = Object.keys(coreDependencies).some(d => d.replace('primevue/', '') === outFile);
 
     entries.push({
         input: 'src/components/' + folder + '/' + inFile,
@@ -57,7 +57,7 @@ function addEntry(folder, inFile, outFile) {
             },
             {
                 format: 'iife',
-                name: 'primevueBeak.' + folder,
+                name: 'primevue.' + folder,
                 file: 'dist/' + folder + '/' + outFile + '.js',
                 globals: globalDependencies
             }
@@ -82,7 +82,7 @@ function addEntry(folder, inFile, outFile) {
             },
             {
                 format: 'iife',
-                name: 'primevueBeak.' + folder,
+                name: 'primevue.' + folder,
                 file: 'dist/' + folder + '/' + outFile + '.min.js',
                 globals: globalDependencies
             }
@@ -123,7 +123,7 @@ function addCore() {
             generateBundle() {
                 Object.entries(core).forEach(([filePath, value]) => {
                     const code = Object.keys(coreDependencies).reduce((val, d) => {
-                        const name = d.replace('primevueBeak/', '');
+                        const name = d.replace('primevue/', '');
                         val += value[name] + '\n';
 
                         return val;
@@ -161,7 +161,7 @@ function addDirectives() {
 }
 
 function addConfig() {
-    addEntry('config', 'primevueBeak.js', 'config');
+    addEntry('config', 'PrimeVue.js', 'config');
 }
 
 function addUtils() {
