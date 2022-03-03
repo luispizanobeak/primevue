@@ -2,7 +2,7 @@
     <div class="p-fileupload p-fileupload-advanced p-component" v-if="isAdvanced">
         <div class="p-fileupload-buttonbar">
             <span :class="advancedChooseButtonClass" :style="style" @click="choose" @keydown.enter="choose" @focus="onFocus" @blur="onBlur" v-ripple tabindex="0">
-                <input ref="fileInput" type="file" @change="onFileSelect" :multiple="multiple" :accept="accept" :disabled="chooseDisabled" />
+                <!-- <input ref="fileInput" type="file" @change="onFileSelect" :multiple="multiple" :accept="accept" :disabled="chooseDisabled" /> -->
                 <span class="p-button-icon p-button-icon-left pi pi-fw pi-plus"></span>
                 <span class="p-button-label">{{chooseButtonLabel}}</span>
             </span>
