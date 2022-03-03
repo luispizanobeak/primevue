@@ -1,15 +1,11 @@
 {
-    "name": "primevue",
+    "name": "primevuebeak",
     "version": "3.12.2-SNAPSHOT",
-    "homepage": "https://www.primefaces.org/primevue",
     "repository": {
       "type": "git",
-      "url": "https://github.com/primefaces/primevue.git"
+      "url": "https://github.com/luispizanobeak/primevueBeak"
     },
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/primefaces/primevue/issues"
-    },
     "keywords": [
       "primevue",
       "vue",
